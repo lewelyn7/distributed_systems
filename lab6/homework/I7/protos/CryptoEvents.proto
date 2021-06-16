@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package cryptoevents;
+
+service CryptoNotifier{
+    rpc getLatestCandle(CandleRequest) returns (CandleResponse) {}
+}
+
+enum Tickers{
+    t1m = 0;
+    t5m = 1;
+    t15m = 2;
+    t1h = 3;
+}
+
+message CandleRequest{
+    Tickers ticker = 1;
+    string pair = 2;
+}
+
+message CandleResponse{
+    float open = 1;
+    float high = 2;
+    float low = 3;
+    float close = 4;
+}

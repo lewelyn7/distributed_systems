@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.zeroc.gradle.ice-builder.slice' version '1.4.7' apply false
+}
+mainClassName = 'OfficeClient.OfficeClient'
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url 'https://repo.zeroc.com/nexus/content/repositories/releases'
+    }
+}
+
+
+dependencies {
+    compile 'com.zeroc:ice:3.5.0'
+    compile 'com.zeroc:icestorm:3.5.0'
+    implementation 'com.zeroc:ice:3.7.2'
+    // https://mvnrepository.com/artifact/net.sourceforge.argparse4j/argparse4j
+    implementation group: 'net.sourceforge.argparse4j', name: 'argparse4j', version: '0.2.0'
+
+}
+

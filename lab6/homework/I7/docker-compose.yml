@@ -1,0 +1,9 @@
+version: "3"
+services:
+  rozprochy_nginx:
+    image: nginx
+    volumes:
+        - "./nginx_conf:/etc/nginx/conf.d"
+        - "./cert:/certs/"
+    network_mode: host
+
